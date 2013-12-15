@@ -17,6 +17,8 @@ function jackie(){
         template.append(div_hint0);
         template.append(select_button);
         template.append(div_hint1);
+        $("#main_html").removeClass("success");
+        $("#main_html").removeClass("fail");
     }
 
     $("input:button#next").click(function (){
@@ -27,8 +29,12 @@ function jackie(){
     $("#check").click(function (){
         ans = $("#hint-0").text() + $("#show-word-buttons").text() + $("#hint-1").text();
         if (ans == current_data["answer"]){
+            $("#main_html").addClass("success");
+            $("#main_html").removeClass("fail");
             alert("OK");
         }else{
+            $("#main_html").addClass("fail");
+            $("#main_html").removeClass("success");
             alert("NG");
         }
     });

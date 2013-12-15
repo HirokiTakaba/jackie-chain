@@ -31,6 +31,26 @@ html {
     background-size: cover;
 }
 
+.success {
+    min-height: 100%;
+
+    background: #C07B3A url('../img/bg.jpg') 100% 100% no-repeat;
+    background: url('../img/success.png') 100% 100% no-repeat, #C07B3A url('../img/bg.jpg') 100% 100% no-repeat;
+
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.fail {
+    min-height: 100%;
+
+    background: #C07B3A url('../img/bg.jpg') 100% 100% no-repeat;
+    background: url('../img/faild.png') 100% 100% no-repeat, #C07B3A url('../img/bg.jpg') 100% 100% no-repeat;
+
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
 body {
     min-height: 100%;
     font: 20px/1.4 'PT Sans', Helvetica, Arial, sans-serif;
