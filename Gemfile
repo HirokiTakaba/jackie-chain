@@ -79,6 +79,12 @@ gem 'nokogiri'
 # REST API
 gem 'grape'
 
+# Server
+gem 'puma'
+
+# Process Management
+gem 'foreman'
+
 group :development do
   # erbからhamlに変換
   gem 'erb2haml'
