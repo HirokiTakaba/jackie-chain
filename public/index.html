@@ -40,15 +40,17 @@
                 hints = [answer.substring(0, num), answer.substring(num+1, 5)];
                 div_hint0 = $("<span/>").text(hints[0]);
                 select_button = $('<button id="show-word-buttons">');
+                select_button.addClass("select-char");
                 div_hint1 = $("<span/>").text(hints[1]);
                 template = $("#template");
+                template.empty();
                 template.append(div_hint0);
                 template.append(select_button);
                 template.append(div_hint1);
             }
 
             $("input:button#next").click(function (){
-                $.getJSON("http://jackie-chain.herokuapp.com/api/v1/next", next_question);
+                $.getJSON("/api/v1/next", next_question);
             });
 
             $("input:button#check").click(function (){
@@ -58,6 +60,57 @@
             $(document).on('click', "#show-word-buttons", function (){
                 $("#show_buttons").show();
             });
+
+            $("#char-0").click(function (){
+                txt = $(this).text();
+                $("#show-word-buttons").text(txt);
+            });
+            
+            $("#char-0").click(function (){
+                txt = $(this).text();
+                $("#show-word-buttons").text(txt);
+            });
+            
+            $("#char-0").click(function (){
+                txt = $(this).text();
+                $("#show-word-buttons").text(txt);
+            });
+            
+            $("#char-1").click(function (){
+                txt = $(this).text();
+                $("#show-word-buttons").text(txt);
+            });
+            
+            $("#char-2").click(function (){
+                txt = $(this).text();
+                $("#show-word-buttons").text(txt);
+            });
+            
+            $("#char-3").click(function (){
+                txt = $(this).text();
+                $("#show-word-buttons").text(txt);
+            });
+            
+            $("#char-4").click(function (){
+                txt = $(this).text();
+                $("#show-word-buttons").text(txt);
+            });
+            
+            $("#char-5").click(function (){
+                txt = $(this).text();
+                $("#show-word-buttons").text(txt);
+            });
+            
+            $("#char-6").click(function (){
+                txt = $(this).text();
+                $("#show-word-buttons").text(txt);
+            });
+
+            $("#char-7").click(function (){
+                txt = $(this).text();
+                $("#show-word-buttons").text(txt);
+            });
+
         });
         -->
     </script>
@@ -87,14 +140,14 @@
 
             <div id="show_buttons" style="padding:20px 0; display: none;">
                 <div class="modal-body">
-                    <button class="btn btn-success">a</button>
-                    <button class="btn btn-success">b</button>
-                    <button class="btn btn-success">c</button>
-                    <button class="btn btn-success">d</button>
-                    <button class="btn btn-success">e</button>
-                    <button class="btn btn-success">f</button>
-                    <button class="btn btn-success">g</button>
-                    <button class="btn btn-success">h</button>
+                    <button id="char-0" class="btn btn-success">a</button>
+                    <button id="char-1" class="btn btn-success">b</button>
+                    <button id="char-2" class="btn btn-success">c</button>
+                    <button id="char-3" class="btn btn-success">d</button>
+                    <button id="char-4" class="btn btn-success">e</button>
+                    <button id="char-5" class="btn btn-success">f</button>
+                    <button id="char-6" class="btn btn-success">g</button>
+                    <button id="char-7" class="btn btn-success">h</button>
                 </div>
             </div>
         </div>
