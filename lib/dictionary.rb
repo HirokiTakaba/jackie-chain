@@ -34,7 +34,9 @@ module Dictionary
     url = "http://dictionary.cambridge.org/dictionary/british/#{enc_word}"
     html = open(url).read
     doc = Nokogiri::HTML(html)
-    return doc.search('span[class="def-head"]').inner_text
+    text = doc.search('span[class="def-head"]').inner_text
+    sound = doc.search('a[class="sound audio_play_button pron-uk"]').first['data-src-ogg']
+    return text, sound
   end
 
   def text_to_word_list(text)
@@ -49,13 +51,13 @@ module Dictionary
   end
 
   def get_random_en_word(word)
-    text = get_cambridge_text(word)
+    text, sound = get_cambridge_text(word)
     word_list = text_to_word_list(text)
     word_list.sort_by{rand}.each do |wd|
       word_jp = translate_en_to_jp(wd)
       next unless word_jp
-      return wd, word_jp
+      return wd, word_jp, sound
     end
-    return nil, nil
+    return nil, nil, nil
   end
 end
