@@ -7,9 +7,11 @@ function jackie(){
         var num = 2;
         hints = [answer.substring(0, num), answer.substring(num+1, 5)];
         div_hint0 = $("<span/>").text(hints[0]);
+        div_hint0.attr("id", "hint-0");
         select_button = $('<button id="show-word-buttons">');
         select_button.addClass("select-char");
         div_hint1 = $("<span/>").text(hints[1]);
+        div_hint1.attr("id", "hint-1");
         template = $("#template");
         template.empty();
         template.append(div_hint0);
@@ -22,8 +24,13 @@ function jackie(){
         //$.getJSON("/next.json", next_question);
     });
 
-    $("input:button#check").click(function (){
-        alert("check!");
+    $("#check").click(function (){
+        ans = $("#hint-0").text() + $("#show-word-buttons").text() + $("#hint-1").text();
+        if (ans == current_data["answer"]){
+            alert("OK");
+        }else{
+            alert("NG");
+        }
     });
 
     $(document).on('click', "#show-word-buttons", function (){
