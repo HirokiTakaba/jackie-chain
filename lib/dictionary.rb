@@ -64,4 +64,10 @@ module Dictionary
     end
     return nil, nil
   end
+
+  def get_word_in_list()
+    list = ["study","school","english","technology","feature"]
+    word = list[Random.rand(list.length)]
+  end
+
 end
