@@ -86,4 +86,94 @@ function jackie(){
         txt = $(this).text();
         $("#show-word-buttons").text(txt);
     });
+
+    $("#char-8").click(function (){
+        txt = $(this).text();
+        $("#show-word-buttons").text(txt);
+    });
+
+    $("#char-9").click(function (){
+        txt = $(this).text();
+        $("#show-word-buttons").text(txt);
+    });
+
+    $("#char-10").click(function (){
+        txt = $(this).text();
+        $("#show-word-buttons").text(txt);
+    });
+
+    $("#char-11").click(function (){
+        txt = $(this).text();
+        $("#show-word-buttons").text(txt);
+    });
+
+    $("#char-12").click(function (){
+        txt = $(this).text();
+        $("#show-word-buttons").text(txt);
+    });
+
+    $("#char-13").click(function (){
+        txt = $(this).text();
+        $("#show-word-buttons").text(txt);
+    });
+
+    $("#char-14").click(function (){
+        txt = $(this).text();
+        $("#show-word-buttons").text(txt);
+    });
+
+    $("#char-15").click(function (){
+        txt = $(this).text();
+        $("#show-word-buttons").text(txt);
+    });
+
+    $("#char-16").click(function (){
+        txt = $(this).text();
+        $("#show-word-buttons").text(txt);
+    });
+
+    $("#char-17").click(function (){
+        txt = $(this).text();
+        $("#show-word-buttons").text(txt);
+    });
+
+    $("#char-18").click(function (){
+        txt = $(this).text();
+        $("#show-word-buttons").text(txt);
+    });
+
+    $("#char-19").click(function (){
+        txt = $(this).text();
+        $("#show-word-buttons").text(txt);
+    });
+
+    $("#char-20").click(function (){
+        txt = $(this).text();
+        $("#show-word-buttons").text(txt);
+    });
+
+    $("#char-21").click(function (){
+        txt = $(this).text();
+        $("#show-word-buttons").text(txt);
+    });
+
+    $("#char-22").click(function (){
+        txt = $(this).text();
+        $("#show-word-buttons").text(txt);
+    });
+
+    $("#char-23").click(function (){
+        txt = $(this).text();
+        $("#show-word-buttons").text(txt);
+    });
+
+    $("#char-24").click(function (){
+        txt = $(this).text();
+        $("#show-word-buttons").text(txt);
+    });
+
+    $("#char-25").click(function (){
+        txt = $(this).text();
+        $("#show-word-buttons").text(txt);
+    });
 }
