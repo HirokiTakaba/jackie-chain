@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charaset="utf-8">
-    <title>Bootstrap 101 Template</title>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Jackie Chain</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -10,54 +10,103 @@
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="js/html5shiv.js"></script>
-        <script src="js/respond.min.js"></script>
-        <![endif]-->
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom font from Google Web Fonts -->
+    <link href="//fonts.googleapis.com/css?family=PT+Sans:700,400&subset=cyrillic" rel="stylesheet">
+
+    <!-- Bootstrap stylesheets -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template stylesheet -->
+    <link href="css/sunrise.css" rel="stylesheet">
+
     <script type="text/javascript">
-      <!--
-$(document).ready(function(){
-    var current_data = {};
-    function next_question(json){
-        current_data = json;
-        $("#question").text(json["question"]);
-        var answer = json["answer"];
-        var num = 2;
-        hints = [answer.substring(0, num), answer.substring(num+1, 5)];
-        div_hint0 = $("<span/>").text(hints[0]);
-        select_button = $("<button>");
-        div_hint1 = $("<span/>").text(hints[1]);
-        template = $("#template");
-        template.append(div_hint0);
-        template.append(select_button);
-        template.append(div_hint1);
-    }
-    
-    $("input:button#next").click(function (){
-        $.getJSON("/next.json", next_question);
-    });
-    
-    $("input:button#check").click(function (){
-        alert("check!");
-    });
-    
-});
+        <!--
+        $(document).ready(function(){
+            var current_data = {};
+            function next_question(json){
+                current_data = json;
+                $("#question").text(json["question"]);
+                var answer = json["answer"];
+                var num = 2;
+                hints = [answer.substring(0, num), answer.substring(num+1, 5)];
+                div_hint0 = $("<span/>").text(hints[0]);
+                select_button = $('<button id="show-word-buttons">');
+                div_hint1 = $("<span/>").text(hints[1]);
+                template = $("#template");
+                template.append(div_hint0);
+                template.append(select_button);
+                template.append(div_hint1);
+            }
+
+            $("input:button#next").click(function (){
+                $.getJSON("/next.json", next_question);
+            });
+
+            $("input:button#check").click(function (){
+                alert("check!");
+            });
+
+            $(document).on('click', "#show-word-buttons", function (){
+                $("#show_buttons").show();
+            });
+        });
         -->
     </script>
-  </head>
-  <body>
-    <div class="header">
+</head>
+<!--<body style="text-align: center;">-->
+
+<!--</body>-->
+
+<body>
+    <div class="container">
+        <!-- Page heading -->
+        <h1 class="page-heading">Jackie Chain</h1>
+        <!-- /Page heading -->
+
+        <!-- Description -->
+        <p class="description">英単語チェーンラーニングメソッド<br>2014年4月 iPhoneアプリ リリース目標</p>
+        <!-- /Description -->
+
+        <div class="header">
+        </div>
+        <div class="content">
+            <input id="check" type="button" value="check" />
+            <input id="next" type="button" value="next" />
+
+            <div class="hero-unit"><h1 id="question"></h1></div>
+            <div id="template"></div>
+
+            <div id="show_buttons" style="padding:20px 0; display: none;">
+                <div class="modal-body">
+                    <button class="btn btn-success">a</button>
+                    <button class="btn btn-success">b</button>
+                    <button class="btn btn-success">c</button>
+                    <button class="btn btn-success">d</button>
+                    <button class="btn btn-success">e</button>
+                    <button class="btn btn-success">f</button>
+                    <button class="btn btn-success">g</button>
+                    <button class="btn btn-success">h</button>
+                </div>
+            </div>
+        </div>
+
+        <a class="btn btn-primary btn-large">回答</a>
+
     </div>
-    <div class="content">
-    <div id="question"></div>
-    <div id="template"></div>
-    <input id="check" type="button" value="check" />
-    <input id="next" type="button" value="next" />
-    </div>
-    <div class="footer">
-    </div>
-  </body>
+
+    <!-- Scripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+    <script src="js/jquery.countdown.js"></script>
+    <script src="main.config.js"></script>
+    <script src="js/sunrise.js"></script>
+</body>
 </html>
