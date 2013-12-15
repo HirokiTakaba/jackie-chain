@@ -54,7 +54,13 @@ module Dictionary
     word_list.sort_by{rand}.each do |wd|
       word_jp = translate_en_to_jp(wd)
       next unless word_jp
-      return wd, word_jp
+
+      data = {
+        :question => word_jp,
+        :answer => wd
+      }
+
+      return data
     end
     return nil, nil
   end

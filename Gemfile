@@ -76,6 +76,9 @@ gem 'rails_config'
 
 gem 'nokogiri'
 
+# REST API
+gem 'grape'
+
 group :development do
   # erbからhamlに変換
   gem 'erb2haml'
