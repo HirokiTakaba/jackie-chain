@@ -29,7 +29,7 @@ module Dictionary
     text.split('、').each do |te|
       word = te.gsub(/｛.*｝/, '')
       next if word.size < 2
-      next if word =~ /〔|〈|《|◆|【/
+      next if word =~ /〔|〈|《|◆|【|「|『|［/
       return word
     end
     return nil
