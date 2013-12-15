@@ -19,6 +19,7 @@ function jackie(){
         template.append(div_hint1);
         $("#main_html").removeClass("success");
         $("#main_html").removeClass("fail");
+        $("#question").addClass('question-text');
     }
 
     $("input:button#next").click(function (){
