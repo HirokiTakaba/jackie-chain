@@ -20,6 +20,21 @@ module Dictionary
     return nil
   end
 
+  def translate_en_to_jp_by_alc(word)
+    enc_word = URI.encode(word)
+    url = "http://eow.alc.co.jp/search?q=#{enc_word}&ref=sa"
+    html = open(url).read
+    doc = Nokogiri::HTML(html)
+    text = doc.search('div[id=resultsList]').first.search('ol').first.inner_text
+    text.split('、').each do |te|
+      word = te.gsub(/｛.*｝/, '')
+      next if word.size < 2
+      next if word =~ /〔|〈|《|◆|【/
+      return word
+    end
+    return nil
+  end
+
   def translate_jp_to_en(word_jp)
     enc_word = URI.encode(word_jp)
     url = "http://public.dejizo.jp/NetDicV09.asmx/SearchDicItemLite?Dic=EdictJE&Word=#{enc_word}&Scope=HEADWORD&Match=EXACT&Merge=OR&Prof=XHTML&PageSize=20&PageIndex=0"
@@ -52,7 +67,7 @@ module Dictionary
     text = get_cambridge_text(word)
     word_list = text_to_word_list(text)
     word_list.sort_by{rand}.each do |wd|
-      word_jp = translate_en_to_jp(wd)
+      word_jp = translate_en_to_jp_by_alc(wd)
       next unless word_jp
 
       data = {
@@ -69,5 +84,4 @@ module Dictionary
     list = ["study","school","english","technology","feature"]
     word = list[Random.rand(list.length)]
   end
-
 end
