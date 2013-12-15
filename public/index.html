@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <meta charaset="utf-8">
     <title>Bootstrap 101 Template</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -47,9 +47,18 @@ $(document).ready(function(){
     });
     
     $("input:button#check").click(function (){
-        alert("check!");
+        is_match_answer();
     });
-    
+
+    function is_match_answer() {
+        html_input = $('#template').text();
+        answer = current_data['answer'];
+        if (html_input == answer) {
+            $('#check_result').text('◯')
+        } else {
+            $('#check_result').text('☓')
+        }
+    }
 });
         -->
     </script>
@@ -58,11 +67,12 @@ $(document).ready(function(){
     <div class="header">
     </div>
     <div class="content">
-    <div id="question"></div>
-    <div id="template"></div>
-    <input id="check" type="button" value="check" />
-    <input id="next" type="button" value="next" />
+        <div id="question"></div>
+        <div id="template"></div>
+        <input id="check" type="button" value="check" />
+        <input id="next" type="button" value="next" />
     </div>
+    <div id="check_result">未</div>
     <div class="footer">
     </div>
   </body>
