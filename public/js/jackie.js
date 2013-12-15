@@ -9,6 +9,7 @@ function jackie(){
         div_hint0 = $("<span/>").text(hints[0]);
         div_hint0.attr("id", "hint-0");
         select_button = $('<button id="show-word-buttons">');
+        select_button.text("　");
         select_button.addClass("select-char");
         div_hint1 = $("<span/>").text(hints[1]);
         div_hint1.attr("id", "hint-1");
