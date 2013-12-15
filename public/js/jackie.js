@@ -31,11 +31,16 @@ function jackie(){
         if (ans == current_data["answer"]){
             $("#main_html").addClass("success");
             $("#main_html").removeClass("fail");
-            alert("正解");
+            setTimeout(function (){
+                alert("正解");
+            }, 100);
+
         }else{
             $("#main_html").addClass("fail");
             $("#main_html").removeClass("success");
-            alert("不正解: (正解: " + current_data["answer"] + ")");
+            setTimeout(function (){
+                alert("不正解: (正解: " + current_data["answer"] + ")");                
+            }, 100);
         }
     });
 
