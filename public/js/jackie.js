@@ -5,7 +5,7 @@ function jackie(){
         $("#question").text(json["question"]);
         var answer = json["answer"];
         var num = 2;
-        hints = [answer.substring(0, num), answer.substring(num+1, 5)];
+        hints = [answer.substring(0, num), answer.substring(num+1, answer.length)];
         div_hint0 = $("<span/>").text(hints[0]);
         div_hint0.attr("id", "hint-0");
         select_button = $('<button id="show-word-buttons">');
