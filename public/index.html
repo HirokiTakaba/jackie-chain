@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    <script src="js/prototype.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -17,7 +17,47 @@
     <script src="js/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      <!--
+$(document).ready(function(){
+    var current_data = {};
+    function next_question(json){
+        current_data = json;
+        $("#question").text(json["question"]);
+        var answer = json["answer"];
+        var num = 2;
+        hints = [answer.substring(0, num), answer.substring(num+1, 5)];
+        div_hint0 = $("<span/>").text(hints[0]);
+        select_button = $("<button>");
+        div_hint1 = $("<span/>").text(hints[1]);
+        template = $("#template");
+        template.append(div_hint0);
+        template.append(select_button);
+        template.append(div_hint1);
+    }
+    
+    $("input:button#next").click(function (){
+        $.getJSON("/next.json", next_question);
+    });
+    
+    $("input:button#check").click(function (){
+        alert("check!");
+    });
+    
+});
+        -->
+    </script>
   </head>
   <body>
+    <div class="header">
+    </div>
+    <div class="content">
+    <div id="question"></div>
+    <div id="template"></div>
+    <input id="check" type="button" value="check" />
+    <input id="next" type="button" value="next" />
+    </div>
+    <div class="footer">
+    </div>
   </body>
 </html>
